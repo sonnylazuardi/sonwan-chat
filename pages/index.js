@@ -2,6 +2,7 @@ import { useState, useContext } from "react";
 import UserContext from "lib/UserContext";
 import { supabase } from "lib/Store";
 import toast, { Toaster } from "react-hot-toast";
+import Head from "next/head";
 
 const Home = () => {
   const { signIn } = useContext(UserContext);
@@ -36,6 +37,10 @@ const Home = () => {
 
   return (
     <>
+      <Head>
+        <title>SonWan Chat</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
       <div className="w-full h-full flex justify-center items-center p-4 bg-light-100">
         <div className="w-full sm:w-1/2 xl:w-1/3">
           <div className="font-semibold text-2xl mb-6 text-center">
