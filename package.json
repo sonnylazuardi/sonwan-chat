@@ -10,10 +10,13 @@
   },
   "dependencies": {
     "@supabase/supabase-js": "^0.36.5",
+    "classnames": "^2.2.6",
+    "framer-motion": "^3.1.1",
     "next": "latest",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "sass": "^1.26.2",
+    "sonwan-ui": "^1.0.5",
     "tailwindcss": "^1.1.4"
   },
   "keywords": [],
