@@ -22,6 +22,7 @@ const Home = () => {
       if (!user)
         alert("Signup successful, confirmation mail should be sent soon!");
       if (!!user) signIn(user.id, user.email);
+      toast.dismiss(loadingToast);
     } catch (error) {
       const errorObj = JSON.parse((error + "").replace("Error: ", ""));
       console.log("error", errorObj);
