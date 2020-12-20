@@ -21,7 +21,10 @@ const Home = () => {
       // If the user doesn't exist here and an error hasn't been raised yet,
       // that must mean that a confirmation email has been sent.
       if (!user)
-        alert("Signup successful, confirmation mail should be sent soon!");
+        toast.success(
+          "Signup successful, confirmation mail should be sent soon!",
+          { id: loadingToast }
+        );
       if (!!user) signIn(user.id, user.email);
       toast.dismiss(loadingToast);
     } catch (error) {
