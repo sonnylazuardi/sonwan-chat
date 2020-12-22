@@ -44,14 +44,13 @@ const Home = () => {
     <>
       <Head>
         <title>SonWan Chat 💬</title>
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
-      <div className="w-full h-full flex justify-center items-center p-4 bg-light-100">
-        <div className="w-full sm:w-1/2 xl:w-1/3">
+      <div className="w-full h-full flex justify-center items-center bg-light-100">
+        <div className="w-full sm:w-1/3 xl:w-1/4">
           <div className="font-semibold text-2xl mb-6 text-center">
             Sign in to SonWan Chat 💬
           </div>
-          <div className="border-teal p-8 border-t-12 bg-white mb-6 rounded-xl bg-white">
+          <div className="border-teal p-4 border-t-12 bg-white mb-6 rounded-xl bg-white">
             <div className="mb-4">
               <label className="font-semibold text-sm text-grey-darker block mb-2">
                 Email
@@ -88,7 +87,7 @@ const Home = () => {
               Sign in
             </a>
           </div>
-          <div className="border-teal p-8 border-t-12 bg-white mb-6 rounded-xl bg-white">
+          <div className="border-teal p-4 border-t-12 bg-white mb-6 rounded-xl bg-white text-sm">
             New to SonWan Chat? &nbsp;
             <a
               onClick={(e) => {

@@ -33,75 +33,77 @@ export default function Layout(props) {
   };
 
   return (
-    <main className="main flex h-screen w-screen overflow-hidden">
-      {/* Sidebar */}
-      <nav
-        className="w-0 sm:w-64 bg-light-100 dark:bg-dark-900 text-black overflow-scroll"
-        style={{ maxHeight: "100vh" }}
-      >
-        <div className="p-4">
-          <div className="bg-white dark:bg-dark-500 flex flex-row p-4 rounded-xl text-sm mb-4 items-center space-x-4">
-            <img
-              className="w-10 h-10 rounded-full"
-              alt="profile"
-              src={`https://unavatar.now.sh/${currentUser?.username}`}
-            />
-            <div className="text-black dark:text-white text-sm font-semibold">
-              {username}
-            </div>
-          </div>
-
-          <div className="bg-white dark:bg-dark-500 flex flex-col p-4 rounded-xl text-sm mb-4">
-            <ListItem
-              title="🌙 &nbsp; Dark Mode"
-              action={
-                <Switch
-                  name="darkmode"
-                  onChange={(value) => {
-                    if (value) {
-                      document.querySelector("html").classList.add("dark");
-                    } else {
-                      document.querySelector("html").classList.remove("dark");
-                    }
-                  }}
-                />
-              }
-            />
-            <ListItem
-              title="🔒 &nbsp; Log Out"
-              action={
-                <Switch
-                  name="logout"
-                  onChange={(value) => {
-                    if (value) {
-                      signOut();
-                    }
-                  }}
-                />
-              }
-            />
-          </div>
-
-          <ul className="channel-list bg-white dark:bg-dark-500 p-4 rounded-xl text-sm mb-4  ">
-            <h4 className="text-sm mb-4 text-black dark:text-white opacity-50">
-              Channels
-            </h4>
-            {props.channels.map((x) => (
-              <SidebarItem
-                channel={x}
-                key={x.id}
-                isActiveChannel={x.id === props.activeChannelId}
+    <div className=" h-screen w-screen bg-light-100 dark:bg-dark-900">
+      <main className="main flex container mx-auto max-w-screen-lg">
+        {/* Sidebar */}
+        <nav
+          className="w-0 sm:w-64 bg-light-100 dark:bg-dark-900 text-black overflow-scroll"
+          style={{ maxHeight: "100vh" }}
+        >
+          <div className="p-4">
+            <div className="bg-white dark:bg-dark-500 flex flex-row p-4 rounded-xl text-sm mb-4 items-center space-x-4">
+              <img
+                className="w-10 h-10 rounded-full"
+                alt="profile"
+                src={`https://unavatar.now.sh/${currentUser?.username}`}
               />
-            ))}
-          </ul>
-        </div>
-      </nav>
+              <div className="text-black dark:text-white text-sm font-semibold">
+                {username}
+              </div>
+            </div>
 
-      {/* Messages */}
-      <div className="flex-1 bg-light-100 dark:bg-dark-900 h-screen">
-        {props.children}
-      </div>
-    </main>
+            <div className="bg-white dark:bg-dark-500 flex flex-col p-4 rounded-xl text-sm mb-4">
+              <ListItem
+                title="🌙 &nbsp; Dark Mode"
+                action={
+                  <Switch
+                    name="darkmode"
+                    onChange={(value) => {
+                      if (value) {
+                        document.querySelector("html").classList.add("dark");
+                      } else {
+                        document.querySelector("html").classList.remove("dark");
+                      }
+                    }}
+                  />
+                }
+              />
+              <ListItem
+                title="🔒 &nbsp; Log Out"
+                action={
+                  <Switch
+                    name="logout"
+                    onChange={(value) => {
+                      if (value) {
+                        signOut();
+                      }
+                    }}
+                  />
+                }
+              />
+            </div>
+
+            <ul className="channel-list bg-white dark:bg-dark-500 p-4 rounded-xl text-sm mb-4  ">
+              <h4 className="text-sm mb-4 text-black dark:text-white opacity-50">
+                Channels
+              </h4>
+              {props.channels.map((x) => (
+                <SidebarItem
+                  channel={x}
+                  key={x.id}
+                  isActiveChannel={x.id === props.activeChannelId}
+                />
+              ))}
+            </ul>
+          </div>
+        </nav>
+
+        {/* Messages */}
+        <div className="flex-1 bg-light-100 dark:bg-dark-900 h-screen">
+          {props.children}
+        </div>
+      </main>
+    </div>
   );
 }
 
