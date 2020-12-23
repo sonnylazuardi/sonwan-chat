@@ -45,7 +45,7 @@ const Home = () => {
       <Head>
         <title>SonWan Chat 💬</title>
       </Head>
-      <div className="w-full h-full flex justify-center items-center bg-light-100">
+      <div className="w-full h-screen flex justify-center items-center bg-light-100">
         <div className="w-full sm:w-1/3 xl:w-1/4">
           <div className="font-semibold text-2xl mb-6 text-center">
             Sign in to SonWan Chat 💬
